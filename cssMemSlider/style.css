@@ -111,14 +111,6 @@ h1 {
 
 /* Styling for active buttons */
 
-.controls-wrapper label, 
-#slide1:active ~ .controls label:nth-of-type(1),
-#slide2:active ~ .controls label:nth-of-type(2),
-#slide3:active ~ .controls label:nth-of-type(3),
-#slide4:active ~ .controls label:nth-of-type(4) {
-	background: #000;
-}
-
 .controls-wrapper label:hover, 
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
@@ -127,18 +119,15 @@ h1 {
 	background: #fff;
 }
 
-.controls-wrapper label:hover, 
+.controls-wrapper label span:hover, 
 #slide1:checked ~ .controls label:nth-of-type(1),
 #slide2:checked ~ .controls label:nth-of-type(2),
 #slide3:checked ~ .controls label:nth-of-type(3),
 #slide4:checked ~ .controls label:nth-of-type(4) {
-	background: #fff;
+	border: 3px solid #fff;
 }
 
 
-/* label:hover span {
-  background-color: #fff;
-}
 
 #slide1:checked ~ .controls .label1 span,
 #slide2:checked ~ .controls .label2 span,
@@ -175,7 +164,7 @@ h1 {
 }
 
 
-#slide1:checked ~ .slider > .slide2,
+#slide1:checked ~ .slider > .slide1,
 #slide2:checked ~ .slider > .slide2,
 #slide3:checked ~ .slider > .slide3,
 #slide4:checked ~ .slider > .slide4 {

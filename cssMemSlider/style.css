@@ -132,15 +132,29 @@ h1 {
 }
 
 
-#slide1:checked ~ .controls .label-1 span,
-#slide2:checked ~ .controls .label-2 span,
-#slide3:checked ~ .controls .label-3 span,
-#slide4:checked ~ .controls .label-4 span,
-#slide5:checked ~ .controls .label-5 span {
-	background: none;
+#slide1:checked ~ .controls-wrapper .controls .label-1 span,
+#slide2:checked ~ .controls-wrapper .controls .label-2 span,
+#slide3:checked ~ .controls-wrapper .controls .label-3 span,
+#slide4:checked ~ .controls-wrapper .controls .label-4 span {
+	background: transparent;
   border: 3px solid blue;
 }
 
+#slide1:checked ~ .controls-wrapper .controls .label-1:hover span,
+#slide2:checked ~ .controls-wrapper .controls .label-2:hover span,
+#slide3:checked ~ .controls-wrapper .controls .label-3:hover span,
+#slide4:checked ~ .controls-wrapper .controls .label-4:hover span {
+	background: transparent;
+  border: 3px solid #fff;
+}
+
+#slide1:active ~ .controls-wrapper .controls .label-1 span,
+#slide2:active ~ .controls-wrapper .controls .label-2 span,
+#slide3:active ~ .controls-wrapper .controls .label-3 span,
+#slide4:active ~ .controls-wrapper .controls .label-4 span {
+	background: gray;
+  border: 3px solid gray;
+}
 
 label:hover span {
   background: #fff;

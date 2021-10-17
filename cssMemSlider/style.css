@@ -165,7 +165,7 @@ label:hover span {
 .slides {
 	display: none;
 	z-index: 1;
-	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+	transition: transform ease-in-out .5s, display ease-in-out .5s;
 }
 
 

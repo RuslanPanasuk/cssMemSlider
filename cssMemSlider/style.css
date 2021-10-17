@@ -1,0 +1,258 @@
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+}
+
+body {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 100%;
+  background-color: #000;
+  color: #8a9c22;
+  transition: all 2s ease;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 15rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 7rem;
+}
+
+.slider-wrapper {
+	position: relative;
+  width: 554px;
+  margin: 0 auto;  
+}
+
+.slider {
+  width: 554px;
+  height: 554px;
+	overflow: hidden;
+	position: relative;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.slides {
+  height: 554px;
+  width: 554px;
+	max-height: 554px;
+	max-width: 554px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide1 { 
+  background-image: url(assets/mem-img-1.jpg); 
+}
+
+.slide2 { 
+  background-image: url(assets/mem-img-2.jpg); 
+}
+
+.slide3 { 
+  background-image: url(assets/mem-img-3.jpg); 
+}
+
+.slide4 { 
+  background-image: url(assets/mem-img-4.jpg); 
+}
+
+.controls-wrapper {
+  display: flex;
+  align-items: center;
+	height: 10vh;
+	margin: 0 auto;
+	position: relative;
+	width: 554px;
+}
+
+.slider > input {
+	display: none;
+}
+
+.controls-wrapper .controls {
+  
+}
+
+.controls-wrapper label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+	cursor: pointer;
+	display: inline-block;
+	height: 20px; 
+	width: 20px;
+	position: relative;
+	border-radius: 50%;
+  background-color: blue;
+  transition: background ease-in-out .5s;
+}
+
+.controls-wrapper label span {
+  display: block;
+  border: 3px solid blue;
+	height: 20px;
+	width: 20px;	
+	border-radius: 50%;
+}
+
+/* Styling for active buttons */
+
+.controls-wrapper label, 
+#slide1:active ~ .controls label:nth-of-type(1),
+#slide2:active ~ .controls label:nth-of-type(2),
+#slide3:active ~ .controls label:nth-of-type(3),
+#slide4:active ~ .controls label:nth-of-type(4) {
+	background: #000;
+}
+
+.controls-wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: #fff;
+}
+
+.controls-wrapper label:hover, 
+#slide1:checked ~ .controls label:nth-of-type(1),
+#slide2:checked ~ .controls label:nth-of-type(2),
+#slide3:checked ~ .controls label:nth-of-type(3),
+#slide4:checked ~ .controls label:nth-of-type(4) {
+	background: #fff;
+}
+
+
+/* label:hover span {
+  background-color: #fff;
+}
+
+#slide1:checked ~ .controls .label1 span,
+#slide2:checked ~ .controls .label2 span,
+#slide3:checked ~ .controls .label3 span,
+#slide4:checked ~ .controls .label4 span,
+#slide5:checked ~ .controls .label5 span {
+  background: transparent;
+  border: 2px solid blue;
+}
+
+#slide1:checked ~ .controls .label1:hover span,
+#slide2:checked ~ .controls .label2:hover span,
+#slide3:checked ~ .controls .label3:hover span,
+#slide4:checked ~ .controls .label4:hover span,
+#slide5:checked ~ .controls .label5:hover span {
+  border-color: #fff;
+}
+
+#slide1:active ~ .controls .label1 span:hover,
+#slide2:active ~ .controls .label2 span:hover,
+#slide3:active ~ .controls .label3 span:hover,
+#slide4:active ~ .controls .label4 span:hover,
+#slide5:active ~ .controls .label5 span:hover {
+  background-color: #fff;
+} */
+
+
+/* Styling for active buttons */
+
+.slides {
+	opacity: 0;
+	z-index: 1;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+
+#slide1:checked ~ .slider > .slide2,
+#slide2:checked ~ .slider > .slide2,
+#slide3:checked ~ .slider > .slide3,
+#slide4:checked ~ .slider > .slide4 {
+	opacity: 1;
+	z-index: 10;
+	/* transform: scale(1); */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1150px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 700px) {
+  html {
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 4px;
+  }
+
+  .slider-wrapper,
+  .controls-wrapper {
+    width: 454px; 
+  }
+  
+  .slider {
+    width: 454px;
+    height: 454px;
+  }
+  
+  .slides {
+    height: 454px;
+    width: 454px;
+    max-height: 454px;
+    max-width: 454px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .slider-wrapper,
+  .controls-wrapper {
+    width: 354px; 
+  }
+  
+  .slider {
+    width: 354px;
+    height: 354px;
+  }
+  
+  .slides {
+    height: 354px;
+    width: 354px;
+    max-height: 354px;
+    max-width: 354px;
+  }
+}

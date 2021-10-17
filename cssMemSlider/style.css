@@ -73,13 +73,41 @@ h1 {
 	display: none;
 }
 
+.text {
+  position: relative;
+  font-size: 4rem;
+  display: flex;
+  width: 60%;
+  overflow: hidden;
+}
+
+.text-slide {
+  display: none;
+  z-index: 1;
+	transition: transform ease-in-out .5s, opacity ease-in-out .5s;
+}
+
+#slide1:checked ~ .controls-wrapper .text .text-slide1,
+#slide2:checked ~ .controls-wrapper .text .text-slide2,
+#slide3:checked ~ .controls-wrapper .text .text-slide3,
+#slide4:checked ~ .controls-wrapper .text .text-slide4  {
+  display: block;
+  z-index: 10;
+}
+
+.controls-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 554px;
+  margin: 0 auto;
+}
+
 .controls {
   display: flex;
   align-items: center;
 	height: 10vh;
-	margin: 0 auto;
 	position: relative;
-	width: 554px;
 }
 
 .controls label {
@@ -88,69 +116,37 @@ h1 {
   align-items: center;
   margin-right: 1rem;
 	cursor: pointer;
-	display: inline-block;
-	height: 20px; 
-	width: 20px;
+	height: 50px; 
+	width: 50px;
 	position: relative;
-	border-radius: 50%;
-  background-color: blue;
-  transition: background ease-in-out .5s;
+  /* transition: background ease-in-out .5s; */
 }
 
-.controls label span {
+.controls label > span {
   display: block;
   border: 3px solid blue;
+  background: blue;
 	height: 20px;
 	width: 20px;	
 	border-radius: 50%;
 }
 
-/* Styling for active buttons */
 
-#slide1:checked ~ .controls label:nth-of-type(1),
-#slide2:checked ~ .controls label:nth-of-type(2),
-#slide3:checked ~ .controls label:nth-of-type(3),
-#slide4:checked ~ .controls label:nth-of-type(4) {
-	background: #fff;
+#slide1:checked ~ .controls .label-1 span,
+#slide2:checked ~ .controls .label-2 span,
+#slide3:checked ~ .controls .label-3 span,
+#slide4:checked ~ .controls .label-4 span,
+#slide5:checked ~ .controls .label-5 span {
+	background: none;
+  border: 3px solid blue;
 }
 
 
-#slide1:checked ~ .controls label:nth-of-type(1),
-#slide2:checked ~ .controls label:nth-of-type(2),
-#slide3:checked ~ .controls label:nth-of-type(3),
-#slide4:checked ~ .controls label:nth-of-type(4) {
-	border: 3px solid #fff;
+label:hover span {
+  background: #fff;
+  border: 3px solid #fff;
 }
 
-
-
-/* #slide1:checked ~ .controls .label1 span,
-#slide2:checked ~ .controls .label2 span,
-#slide3:checked ~ .controls .label3 span,
-#slide4:checked ~ .controls .label4 span,
-#slide5:checked ~ .controls .label5 span {
-  background: transparent;
-  border: 2px solid blue;
-}
-
-#slide1:checked ~ .controls .label1:hover span,
-#slide2:checked ~ .controls .label2:hover span,
-#slide3:checked ~ .controls .label3:hover span,
-#slide4:checked ~ .controls .label4:hover span,
-#slide5:checked ~ .controls .label5:hover span {
-  border-color: #fff;
-}
-
-#slide1:active ~ .controls .label1 span:hover,
-#slide2:active ~ .controls .label2 span:hover,
-#slide3:active ~ .controls .label3 span:hover,
-#slide4:active ~ .controls .label4 span:hover,
-#slide5:active ~ .controls .label5 span:hover {
-  background-color: #fff;
-}   */
-
-
-/* Styling for active buttons */
 
 .slides {
 	display: none;
@@ -166,17 +162,6 @@ h1 {
 	display: block;
 	z-index: 10;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media (max-width: 1150px) {
